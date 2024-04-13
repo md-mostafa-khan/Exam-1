@@ -37,7 +37,7 @@ calculateButton.addEventListener("click", function(){
     result.textContent = calculatedResult;
     result.style.backgroundColor = "rgba(75, 243, 156, 0.64)";
   } else {
-    // If result is invalid, display red signal
+    
     result.textContent = "Error: Invalid calculation.";
     result.style.backgroundColor = "rgba(220, 53, 70, 0.37)";
   }
