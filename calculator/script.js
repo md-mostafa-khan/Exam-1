@@ -11,6 +11,7 @@ calculateButton.addEventListener("click", function(){
   const selectedOperation = operation.value;
 
   if (isNaN(num1) || isNaN(num2)) { 
+    result.style.backgroundColor = "rgba(220, 53, 70, 0.43)";
     return (result.textContent = "Error: Please enter valid numbers.");
   }
   let calculatedResult;
@@ -26,10 +27,18 @@ calculateButton.addEventListener("click", function(){
       break;
     case 'divide':
       if (num2 === 0) {
+        result.style.backgroundColor = "rgba(220, 53, 70, 0.47)";
         return (result.textContent = "Error: Division by zero.");
       }
       calculatedResult = num1 / num2;
       break;
   }
-  result.textContent = calculatedResult;
+  if (!isNaN(calculatedResult)) {
+    result.textContent = calculatedResult;
+    result.style.backgroundColor = "rgba(75, 243, 156, 0.64)";
+  } else {
+    // If result is invalid, display red signal
+    result.textContent = "Error: Invalid calculation.";
+    result.style.backgroundColor = "rgba(220, 53, 70, 0.37)";
+  }
 })
